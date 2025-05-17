@@ -331,14 +331,251 @@
 
 # Q )  Write a program that checks whether the given number is divisible by 10 or by 5 or neither
 
-a = int(input("Enter the number :"))
+# a = int(input("Enter the number :"))
 
-if (a % 10) == 0 :
-    print(str(a) + " is Divisible by 10")
-elif (a % 5) == 0 :
-    print(str(a) + " is Divisible by 5")
-else:
-    print(str(a) +" is not Divisible by 10 or 5.")
+# if (a % 10) == 0 :
+#     print(str(a) + " is Divisible by 10")
+# elif (a % 5) == 0 :
+#     print(str(a) + " is Divisible by 5")
+# else:
+#     print(str(a) +" is not Divisible by 10 or 5.")
+
+
+# --------------------------Loops -------------------
+
+#  Q ) Let's write a code to print the next 3 consecutive numbers of the given integer input.
+
+
+
+# a = int(input("Enter a number :"))
+# i = 0
+# while i < 3 :
+#     a += 1
+#     print(a)
+#     i += 1
+# print("End")
+
+#  Q ) Write a program to print stars in N rows and N columns, where integer N is given as an input.
+
+
+# a = int(input("Enter the number :"))
+ 
+# i = 1
+# while i <= a :
+#     print("* " * a)
+#     i += 1
+    
+# print("Complete")
+
+
+# Q ) problem-----------------------
+
+# a = input("enter the word :")
+
+# i = 0
+# lenght_of_a = len(a)
+# while i < lenght_of_a :
+#     print(a[i])
+#     i += 1
+
+# ------------For Loop
+ 
+# name = "Pavan"
+# for each_pavan in name :
+#     print(each_pavan)
+
+
+# num =  int(input("Enter the number :"))
+# a = range(num)
+# for each_pavan in (a) :
+#     print(each_pavan)
+    
+    
+# Q) Write a program to print right triangular pattern where integer N is given as input
+
+# num = int(input("Enter a number :"))
+# a = range(num)
+# for each_num in a :
+#     print("* " * (each_num + 1))
+
+
+# -------------------Range
+# Solution 1
+
+# for each_num in range(3,10) :
+#     print(each_num)
+
+# Solution 2
+
+# a = input("enter name:")
+# len_of_a = len(a)
+# b = a[0]
+# for i in range(1,len_of_a) :
+#     b = b + "-" + a[i]
+# print(b)
+
+
+# -----------------String Extended slicing
+
+# name = "-R-a-v-i-"
+# print(name[1:8:2])
+
+# name = "Bhagavan Pavan"
+# print(name[1:10:2])
+
+
+# -------------------------String methods
+
+# 1 ) is digit
+
+# pin = "98439"
+# is_digit = pin.isdigit
+# is_4_digit = (len(pin) == 4)
+# is_vaild =  is_digit and is_4_digit
+# print(is_vaild)
+
+
+# 2 ) strip
+
+# num = " 84748 "
+# str = num.strip()
+# print(str)
+
+# ------- Removing specified characters that are leading or trailing using strip(character)
+
+# name = "B.Pavan.,   ,,,,....."
+
+# name = name.strip("., ")
+# print(name)
+
+# 3 ) Replace
+
+# sentence = "teh cat and teh dog"
+# sentence = sentence.replace("teh","the")
+# print(sentence)
+
+
+
+# 4) Startswith
+
+# url = "https:/onthegomodel.com"
+# is_secure_url = url.startswith("https:/")
+# print(is_secure_url)
+
+# 5 ) Endswith
+
+# gmail_id = "bhagavanpavna01@gmail.com"
+# is_mail =gmail_id.endswith("@gmail.com")
+# print(is_mail)
+
+
+# 6) Upper
+
+
+# name = "pavan"
+# print(name.upper())
+
+# 7) Lower
+
+# name = "PAVAN"
+# print(name.lower())
+
+
+
+# ----------------------------------------Problem solving and debugging -------------------------------
+
+# Q) Given a string to print substrings in expected pattern of N rows where N is the length of the string.
+
+# str = input("Enter the word :")
+# inde = 0
+# lenght = len(str)
+
+# for each_char in range(1,(lenght + 1)):
+#     print (str[:each_char])
+
+
+# Q) Given a string S and N integers, where N is the lenght of the string S. print the string after shuffling the character as per the order of the integers given.
+
+# str = input("Enter the word :")
+# shuffled_s = ""
+# str_length =  len(str)
+# # b = str(str_length)
+
+
+# # print("Enter the cha values in " + b + "times")
+# for i in range(str_length) :
+#     index = int(input())
+#     shuffled_s = shuffled_s + str[index]
+    
+# print(shuffled_s)
+
+
+# Q ) Write a program to print if the given number is a prime number or not
+
+# ---- 1  Approach
+
+# a = int(input("Enter the number :"))
+
+# i = 1
+# count = 0
+# while i <= a :
+#     if a % i == 0 :
+#         count += 1
+#     i += 1
+
+# if count == 2 :
+#     print("the given number is Prime")
+# else :
+#     print("the given number is not a prime")
+
+
+# ----------- 2 nd Approach
+
+# a = int(input("Enter the number :"))
+
+# count = 0
+
+# for i in range(1,a) :
+#     if (a % i) == 0 :
+#         count += 1
+
+# if count == 1 :
+#     print("Prime Number")
+# else :
+#     print("Not a prime Number")
+
+# ----------- 3 rd approach
+
+# a = int(input("Enter the number :"))
+
+# count = 0
+
+# for i in range(2,a) :
+#     if (a % i) == 0 :
+#         count += 1
+
+# if count == 0 :
+#     print("Prime Number")
+# else :
+#     print("Not a prime Number")
+
+
+
+# ----------Challenge
+
+n = int(input())
+k = n
+for i in range(1,n+1) :
+    spaces = " " * k
+    stars = "* " * i
+    print(spaces + stars)
+    k = k-1
+
+
+
+
+
+
 
 
 
