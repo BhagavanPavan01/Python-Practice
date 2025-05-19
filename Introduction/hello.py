@@ -563,15 +563,188 @@
 
 # ----------Challenge
 
-n = int(input())
-k = n
-for i in range(1,n+1) :
-    spaces = " " * k
-    stars = "* " * i
-    print(spaces + stars)
-    k = k-1
+# n = int(input())
+# k = n
+# for i in range(1,n+1) :
+#     spaces = " " * k
+#     stars = "* " * i
+#     print(spaces + stars)
+#     k = k-1
 
 
+
+# ------------------------Nested Loop
+
+# for a in range  (3) :
+#     print("puter :" + str(a))
+#     for b in range (7,9) :
+#         print(" inner : " + str(b))
+# print("END")
+
+
+# Q ) Write a program to print triangulaar pattern with numbers in N rows, where integer N is given as input.
+
+# a = int(input("Enter width of the trinagle :"))
+
+# for i in range (1,a+1):
+#     k = ""
+#     for j in range (1,i+1) :
+#         k = k + str(j) + " "
+#     print(k)
+    
+    
+    
+# n = int(input())
+# for row_num in range (0,n+1) :
+#     row_output = " "
+#     seq_num = row_num
+#     while seq_num > 0 :
+#         row_output = row_output + str(seq_num)
+#         seq_num = seq_num - 1
+#     print(row_output)
+
+
+# n = int(input())
+# for row_num in range(n, 0, -1):
+#     row_output = ""
+#     seq_num = row_num
+#     while seq_num > 0:
+#         row_output += str(seq_num)
+#         seq_num -= 1
+#     print(row_output)
+
+
+# --------------------------   Break
+
+# for i in range (1,5) :
+#     if i == 3 :
+#         break
+#     print(i)
+# print("End")
+
+
+# i = 0 
+# while i < 10 :
+#     if i == 5 :
+#         break
+#     print(i)
+#     i += 1
+# print("End")
+
+
+# for a in range (2) :
+#     print("Outer :" + str(a))
+#     for b in range(4) :
+#         if b == 4 :
+#             break
+#         print(" inner : " + str(b))
+
+
+# Q) Given a sentence, print a new sentence with the first word in uppercase.
+
+# ---------solution 1
+
+# sentence = input()
+
+# first_word = sentence[0:6]
+# first_word_upper_case = first_word.upper()
+# output = first_word_upper_case + sentence[6:]
+# print (output)
+
+# ---------------Solution 2
+
+
+# sentence = input("Enter the sentence :")
+
+# first_word_end_index = 0
+# for char in sentence :
+#     if char == " " :
+#         break
+#     else:
+#         first_word_end_index = first_word_end_index + 1
+        
+# first_word = sentence[0:first_word_end_index]
+# first_word_upper_case = first_word.upper()
+# output = first_word_upper_case + sentence[first_word_end_index:]
+# print(output)
+
+
+# -----------------------Continue
+
+
+# for a in range(3):
+#     if a == 1:
+#         continue
+#     print(a)
+# print("End")
+
+# ---------------------- Pass
+
+# age = int(input() )
+# output = ""
+# if age >= 20:
+#     print("Your age is "+  str(age) + ". Your an adult now.")
+# elif age > 12 :
+#     pass
+# else:
+#     pass
+
+
+# -----------identify the imstake
+
+
+# n = int(input())
+# is_prime = True
+# for i in range(2,n) :
+#     if(n % i) == 0:
+#         is_prime = False
+#         break
+# print(is_prime)
+
+
+# ------------------------unicodes-----------------
+
+# ------- ord ()  its return the order value of the given character
+# unicode_value = ord("G")
+# print(unicode_value)
+
+# ---------chr ()   it can return the character for given order of number
+
+# char = chr(80)
+# print(char)
+
+# for i in range(1,250) :
+#     char = chr(i)
+#     print(char)
+# print("End")
+
+
+# ----------------------Comparing strings-----------------
+
+
+# print("777" < "7777")
+# print("89"< "99")
+# print("99" > "80")
+
+# help("keywords")
+
+# ----------------------Round --------------------------
+
+# a =  round(10.38575888,2)
+# print(a)
+
+# b = round(10,3)
+# print(b)
+
+# a = 0.1+0.2
+# print(a)
+# a = round(a,1)
+# print(a)
+# print(a == 0.3)
+
+# ------------------------- Hollow Diamond Pattern
+# Q ) Write a program to print hollow diamond pattern of size N(2*N-1 rows),
+#     where integer N is given as an input.
 
 
 
