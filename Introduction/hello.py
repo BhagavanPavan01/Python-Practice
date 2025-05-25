@@ -746,9 +746,225 @@
 # Q ) Write a program to print hollow diamond pattern of size N(2*N-1 rows),
 #     where integer N is given as an input.
 
+# n = int(input())
+
+# left_space_count = n-1
+# left_space = " " * left_space_count
+# row_output = left_space + "*"
+# print(row_output)
+
+
+# hellow_space_conut = -1
+# for row in range(2,n+1):
+#     left_space_count = n-row
+#     left_space = " " * left_space_count
+#     hellow_space_conut = hellow_space_conut + 2
+#     hellow_space = " " * hellow_space_conut
+#     row_output =  left_space + "*" + hellow_space + "*"
+#     print(row_output)
+
+    
+# for row_bottom in range(1,n-1) :
+#     left_space_count = row_bottom
+#     left_space = " " * left_space_count
+#     hellow_space_conut = hellow_space_conut - 2
+#     hellow_space = " " * hellow_space_conut
+#     row_output = left_space + "*" + hellow_space + "*"
+#     print(row_output)
+    
+# left_space_count = n-1
+# left_space = " " * left_space_count
+# row_output = left_space + "*"
+# print(row_output)
 
 
 
+# ------------- Debug the question
+
+
+# n = int(input())
+# for i in range(1,n+1):
+#     row_out = " " * (n-i)
+#     row_out = row_out + "$" * n
+#     print(row_out)
+
+
+# -------------Floor Division------------
+
+# print(3//2)         # it refers to integral part only
+
+# # --------------String Escape Characters------------------
+
+# # ---------------------         "\"   is alwayse escape character
+
+# print("Bhagavan\npavan")                  #  ----------  \n is a New line escape character
+
+# print("bhagavan\tpavan")                  #  ====------   \t is a tab character
+
+# print("bhagavan\\pavan")                  #  ---------    \\ is back slash escape character
+
+# print('it\'pavan')                        #  ---------    \' is a single quot escape char
+
+# print("it\"pavan")                        #  ---------    \" is a double quot escape character
+
+
+# Q ) Given two strings, print Yes if the second string is a subsequence of first string. Otherwise, print None
+
+# strings =   abcde
+#         =   ace
+
+# Solution :
+
+# full_string = input()
+# sub_sequence = input()
+
+# subseq_index = 0
+# subseq_len = len(sub_sequence)
+
+# for char in full_string:
+#     if char == sub_sequence[subseq_index]:
+#         subseq_index += 1
+#         if subseq_index == subseq_len :
+#             break
+
+# if subseq_index == subseq_len :
+#     print("Yes")
+# else:
+#     print("No")
+ 
+
+
+# n = int(input())
+# for i in range (1,n+1):
+#     spaces = " "*(n-i)
+#     left_nums = ""
+#     right_muns = ""
+#     for j in range(1,i+1) :
+#         left_nums = str(j) + left_nums
+#         right_muns = right_muns + str(j)
+#     print(spaces + left_nums + right_muns[1:])
+
+
+# ---------------------------- List --------------------
+
+# a = 2 
+# list_a = [5,"six",a,8.2]
+# list_b = [1,list_a]
+# print(type(list_a))
+# print(list_a)
+# print(len(list_a))
+# print(type(list_b))
+# print(list_b)
+# print(len(list_b))
+
+# ------------------ Accessing elements
+
+# print(list_b[1])
+# print(list_a[1])
+
+# ---------------------  Iterating Over a List
+
+# for item in list_a :
+#     print(item)
+   
+
+# ----------------------- List Concatenation
+
+# list_a = [1,2,3,4]
+# list_b = ["a","b","c"]
+# list_c = list_a + list_b
+# print(list_c)
+
+# --------------------------- Adding elements in a list
+
+# list_a = []
+# print(list_a)
+# for i in range(1,5):
+#     list_a += [i]
+#     print(list_a)
+    
+# print(list_a)
+    
+    
+# --------------------------- Repetation of list
+
+# list_a = [1,2]
+# list_b = list_a * 3
+# print(list_b)
+
+
+# ----------------------------  Obtain part of a list
+
+# Obtaining a part of a list is called list slicing
+
+# list_a = [1,2,3,4,5,6,7,8,9,10,11]
+# list_b = list_a[:3]
+# print(list_b)
+
+# ----------- Estended slicing (step jumping)
+
+# list_c = list_a[0:10:2]
+# print(list_c)
+
+
+# ----------------- Converting to list
+
+# color = "red"
+# list_a = list(color)
+# print(list_a)
+
+# -------------------  List of range
+
+# list_a = list(range(4))
+# print(list_a)
+
+# ----------------------- List are mutable
+
+# Lists can be modified items at any position can be updated
+
+# list_a = [1,2,3,4,6]
+# print(list_a)
+# list_a[4] = 5
+# print(list_a)
+
+# ------------Identify the mistake
+
+# animals = ['cat','dog']
+# wild_animals = ['tigeer','fox'] 
+# animals += [wild_animals]
+# print(animals)
+
+
+# ----------------- Objects
+
+# print(id("Hello"))
+
+# a = "Hello"
+# print(id(a))
+# a = a + " World"
+# print(id(a))
+
+# list_a = [1,2,3,4]
+# list_b = list_a
+# list_a += [5,6]
+# print("list_a: " + str(list_a))
+# print("list_b: " + str(list_b))
+
+
+# list_a = [1,2]
+# list_b = [3,list_a]
+# list_a[1] = 4
+# print(list_a)
+# print(list_b)
+
+
+a = 2
+list_a = [1,a]
+print(list_a)
+a = 3
+print(list_a)
+list_a = [1,a]
+print(list_a)
 
 
 
