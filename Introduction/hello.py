@@ -958,13 +958,154 @@
 # print(list_b)
 
 
-a = 2
-list_a = [1,a]
-print(list_a)
-a = 3
-print(list_a)
-list_a = [1,a]
-print(list_a)
+# a = 2
+# list_a = [1,a]
+# print(list_a)
+# a = 3
+# print(list_a)
+# list_a = [1,a]
+# print(list_a)
+
+
+
+# ----------------------- Splitting a string
+
+# str = "1.2.3.4.5.6.7.8.9."
+# str_list = str.split(".")
+# print(str_list)
+
+# nums = "1 2 3 4 5 "
+# num_list = nums.split()
+# print(num_list)
+
+
+# string_a = "Python is a programming language"
+# list_a = string_a.split('a')
+# print(list_a)
+
+
+# ----------------------- Joining strings
+
+# Takes all the items in a sequence of string and joins them into one string
+
+
+
+# list_a = "Python is a programming language"
+# string_split = list_a.split("a")
+# print(string_split)
+# # list_a = ['python is ',' progr','mming l','ngu','ge']
+# string_a = "a".join(string_split)
+# print(string_a)
+
+
+# list_a = list(range(4))
+# string_a = ",".join(list_a)
+# print(string_a)        #---------it will be error
+
+
+# -----------------------List Negative Indexing
+
+# list_a = [1,2,3,4,5,6,7,89,0]
+# print(list_a[-1])
+# print(list_a[-2])
+# print(list_a[-3])
+# print(list_a[-4])
+# print(list_a[-5])
+
+
+# ----------------- Negative indexing Slicing
+
+# list_a = [1,2,3,4,5,6,7,8,9]
+# list_b = list_a[-3:-1]
+# print(list_b)
+
+# ---------- Negative step size
+
+# list_a = [1,2,3,4,5,6,7,8]
+# list_b = list_a[4:1:-1]
+# print(list_b)
+
+
+# list_a = [1,2,3,4,5,6]
+# list_b = list_a[::-1]
+# print(list_b)
+
+# str_1 = "Program"
+# str_2 = str_1[::-1 ]
+# print(str_2)
+
+
+
+# ------------------- Identify the mistake
+
+
+# list_a = input().split(",")
+# list_b = input().split(",")
+# len_of_list_a = len(list_a)
+# n = len_of_list_a - 1
+# for i in range(len_of_list_a) :
+#     num_1 = list_a[i]
+#     num_2 = list_b[n-i]
+#     result = str(num_1) + " " + str(num_2)
+#     print(result)
+
+
+# -------------------------Function -----------------
+
+
+# def greet() :
+#     print("Hello")
+    
+# name = input()
+# greet()
+# print(name) 
+
+# --------- function srting concatination -----------
+
+# def greet(word) :
+#     msg = "Hello " + word
+#     print(msg)
+
+# name = input()
+# greet(word = name)
+
+
+# --------------------- Returning a Value -------------------
+
+# def greet(word) :
+#     msg = "Hello " + word
+#     return msg
+
+# name = input()
+# greeting = greet(word = name)
+# print(greeting)
+
+
+# ------------------- Identify the mistake
+
+# def get_list(string_a) :
+#     list_a = string_a.split(',')
+#     len_list_a = len(list_a)
+#     for i in range(len_list_a):
+#         list_a[i] = int(list_a[i]) ** 2
+        
+#     return list_a
+
+# string_a = input()
+# numbers_list = get_list(string_a)
+# print(numbers_list)
+
+
+
+# -------------------- Multiple arguments ---------------
+
+def greet(arg_1,arg_2) :
+    print(arg_1 + " " + arg_2)
+
+greeting = input("Enter your first name :")
+name = input("Enter your second name :")
+greet(greeting,name)
+
 
 
 
