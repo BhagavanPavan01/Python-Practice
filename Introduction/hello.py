@@ -1097,15 +1097,306 @@
 
 
 
-# -------------------- Multiple arguments ---------------
+# -------------------- Multiple arguments & Positional orguments ---------------
 
-def greet(arg_1,arg_2) :
-    print(arg_1 + " " + arg_2)
+# def greet(arg_1,arg_2) :
+#     print(arg_1 + " " + arg_2)
 
-greeting = input("Enter your first name :")
-name = input("Enter your second name :")
-greet(greeting,name)
+# greeting = input("Enter your first name :")
+# name = input("Enter your second name :")
+# greet(greeting,name)
+# greet(name,greeting)
 
+
+# --------------------------------
+
+# def addie(arg_1="Hi" , arg_2="Pavan"):
+#     print(arg_1 + " " + arg_2)
+    
+# addie()
+# addie("Hello")
+# addie(arg_2="Gayathri")
+# addie("Keerthi")
+
+
+# ------------------------------------
+
+# def increment(a):
+#     a += 1
+#     print(a)
+    
+# a = int(input())
+# increment(a)
+
+
+# ============================= Passing Mutable Objects ===================
+
+# def add_item(list_x):
+#     list_x += [3]
+    
+# list_a = [1,2]
+# add_item(list_a)
+# print(list_a)
+        
+#==================================       
+        
+# def add_item(list_x = []):
+#     list_x += [3]
+#     print(list_x)
+#     print(id(list_x))
+    
+# add_item()
+# add_item([1,2])
+# add_item()
+# add_item()
+# add_item()
+
+# ==================================
+
+# sequence = [12,10,15,50,2,3,0,8,1]
+# order = sorted(sequence,reverse=True)
+# print(order)
+
+# ========================= Extract Digits ===============
+
+
+# string = input()
+# digits_list = []
+# for char in string:
+#     if char.isdigit():
+#         digits_list += [int(char)]
+
+# sum_of_numbers =  sum(digits_list)
+# print(sum_of_numbers)
+# min_of_numbers = min(digits_list)
+# print(min_of_numbers)
+# max_of_mumbers = max(digits_list)
+# print(max_of_mumbers)
+
+
+
+# ===================== Identify the Mistake ==================
+
+# list_a = [2,4,1,3,5]
+# list_x = []
+# for item in list_a:
+#     list_x += [item*item]
+# print(sorted(list_x))
+
+#  ===================== Recursion =============================
+
+# def multiply(x):    # Recursive Function
+#     if x == 1:      # Base case
+#         return 1
+#     return x * multiply(x-1)    # Recursion
+
+# n = int(input())
+# result = multiply(n)    # Function Call
+# print(result)
+
+# ===================== Coding Practice ===========================
+
+# def sum_of_numbers(n):
+#     if n == 0:
+#         return 0
+#     else:
+#         return n + sum_of_numbers(n-1)
+    
+# num = int(input())
+# result = sum_of_numbers(num)
+# print(result) 
+
+
+# ========================= List Methods ============================
+# append()==========
+
+# list_a = []
+# for x in range(1,4):
+#     list_a.append(x)
+#     print(list_a)
+# print(list_a)
+
+# extend()==========
+
+# list_a = [1,2,3]
+# list_b = [4,5,6]
+# list_a.extend(list_b)
+# print(list_a)
+
+# insert()==========
+
+# list_a = [1,2,3]
+# list_a.insert(0,5)
+# print(list_a)
+
+# insert()==========
+
+# list_a = [1,2,3,4]
+# list_a.pop(2)
+# print(list_a)
+
+# Removet()==========
+
+# list_a = [1,2,3,4,5.1,1,1]
+# list_a.remove(1)
+# print(list_a)
+
+# Removet()==========
+
+# list_a = [1,2,3,4]
+# list_a.clear()
+# print(list_a)
+
+#Index()============
+
+# list_a = [1,2,3,4]
+# print(list_a.index(3))
+
+#count()============
+
+# list_a = [1,2,3,4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
+# count = list_a.count(2)
+# print(count)
+
+# sort() ==============
+
+# list_a = [1,2,3,4]
+# list_b = sorted(list_a)
+# list_a.sort()
+# print(list_a)
+# print(list_b) 
+# print(list_b) 
+
+# =============================== Fibonacci series ============================
+
+# def fibonacci(n):
+#     if n<=1:
+#         return n
+#     return fibonacci(n-1) + fibonacci(n-2)
+
+# n = int(input())
+# result = fibonacci(n)
+# print(result)
+
+# ======================= tuples and sets ===================================
+
+# None Type ======================
+
+# var = None
+# print(var)
+# print(type(var))
+
+# Example =============
+
+# def increment(a):
+#     a += 1
+#     return a
+
+# a = int(input())
+# result = increment(a)
+# print(result)
+
+
+# ================= Tuples ================ Tuples are immutable ===
+
+# a = 2
+# tuple_a = (5,"Six",a,8.2)
+# print(type(tuple_a))
+# print(tuple_a)
+
+# a = ()
+# b = (5)
+# c = (1,2)
+# print(type(a))
+# print(type(b))
+# print(type(c))
+
+# a = ("Six",10,2.3,12)
+# result = a[1]
+# print(result)
+
+# a = ("Six",10,2.3,12)
+# print(len(a))
+# print(a[1:3])
+# print(a[0:1:2])
+# for item in a:
+#     print(item)
+
+# Converting srting To Tuple & Range =======================
+
+# color = "Red"
+# tuple_a = tuple(color)
+# print(tuple_a)
+
+# tuple_b = tuple(range(4))
+# print(tuple_b)
+
+# ====== Membership Check ======================================
+
+# tuple_a = (1,2,3,4)
+# is_part = 5 in tuple_a
+# print(is_part)
+
+# is_part = 5 not in tuple_a
+# print(is_part) 
+
+# word = 'Python'
+# is_part = 'th' in word
+# print(is_part)
+
+# list_a = [1,2,3,4]
+# is_part = 1 in list_a
+# print(is_part)
+
+# Unpacking =================================
+
+# tuple_a = ('R','e','d')
+# (s_1,s_2,s_3) = tuple_a
+# print(s_1)
+# print(s_2)
+# print(s_3)
+
+# eg===============
+
+# a, = 1,
+# print(type(a))
+# print(a)
+
+# Tuple Packing ===================================
+
+# a = 1,2,3
+# print(type(a))
+# print(a)
+
+# Packing and unpacking at a time =====================
+
+# a,b,c = 1,2,"Hi"
+# print(a)
+# print(b)
+# print(c)
+
+# Returning Multiple Values =================================
+
+# def get_sum_and_product(a,b):
+#     num_sum = a + b
+#     num_product = a*b
+#     return num_sum, num_product
+
+# result = get_sum_and_product(2,3)
+# print(result)
+# x,y = get_sum_and_product(2,3)
+# print(x)
+# print(y)
+
+# Identify the Mistake =====================================
+
+str_a = input()
+a = str_a.split(",")
+i = 0
+for item in a:
+    a[i] = int(item)
+    i += 1
+print(a)
 
 
 
