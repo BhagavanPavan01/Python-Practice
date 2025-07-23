@@ -1390,13 +1390,186 @@
 
 # Identify the Mistake =====================================
 
-str_a = input()
-a = str_a.split(",")
-i = 0
-for item in a:
-    a[i] = int(item)
-    i += 1
-print(a)
+# str_a = input()
+# a = str_a.split(",")
+# i = 0
+# for item in a:
+#     a[i] = int(item)
+#     i += 1
+# a = tuple(a)
+# print(a)
 
 
+# ============= Sets =========================================
+# b = 20
+# a = {1,2,3.3,4,5.1,6,b,1,b}
+# print(type(a))
+# print(a)
 
+# Empty set ==========
+
+# set_a = set()
+# print(type(set_a))
+# print(set_a)
+
+# set_a = set("apple")
+# print(set_a)
+
+# set_a = set((1,2,1))
+# print(set_a)
+
+# ===== Adding items in set ==================================
+
+# set_a = {1,2,3,6,4,9}
+# set_a.add(7)
+# set_a.update([0,8,5,'s'])
+# set_a.discard(9)
+# # set_a.remove(9)
+# print(set_a) 
+
+#  ============ Operations =========================================
+
+# set_a = {1,2,3,5,4,7,9,6}
+# print(len(set_a))
+
+# for item in set_a:
+#     print(item)
+    
+# is_not_part = 11 not in set_a
+# print(is_not_part)
+# is_part = 2 in set_a
+# print(is_part)
+
+# ======== Identify the mistake =========================
+
+# set_a = {"pencil"}
+# set_a.update(["pen"])
+# print(set_a)
+
+# ================= Set Operations =======================================
+
+# =========== Union =========
+# set_a = {1,2,3,6}
+# set_b = {2,3,5,7,8}
+# print(set_a | set_b)
+# result =  set_a.union(set_b)
+# print(result)
+
+# ========== Intersection ======
+
+# set_a = {1,2,3,6}
+# set_b = {2,3,5,7,8}
+# print(set_a & set_b)
+# result =  set_a.intersection(set_b)
+# print(result)
+
+# # ========== Difference ======
+
+# set_a = {1,2,3,6}
+# set_b = {2,3,5,7,8}
+# print(set_a - set_b)
+# result =  set_a.difference(set_b)
+# print(result)
+
+# ========== Symmetrix Difference ======
+
+# set_a = {1,2,3,6}
+# set_b = {2,3,5,7,8}
+# print(set_a ^ set_b)
+# result =  set_a.symmetric_difference(set_b)
+# print(result)
+
+
+# ======================= Set Comparisions ====================================
+
+# # ====== Is Subset ==============
+
+# set_1 = {1,2,3,5,6}
+# set_2 = {3,5,6}
+# is_subset = set_2.issubset(set_1)
+# print(is_subset)
+
+# # ====== Is Superset ==============
+
+# set_1 = {1,2,3,5,6}
+# set_2 = {3,5,6}
+# is_subset = set_1.issuperset(set_2)
+# print(is_subset)
+
+# ====== Is Disjointset ==============
+
+# set_1 = {1,2,3,5,6}
+# set_2 = {3,5,6}
+# is_subset = set_1.isdisjoint(set_2)
+# print(is_subset)
+
+                            # ==================================
+# ========= K Sum Pairs ============ Problem solving and debugging ======================
+                            # ==================================
+                            
+                            
+# def convert_str_to_int(str_num_list):
+#     new_list = []
+#     for item in str_num_list:
+#         int_num = int(item)
+#         new_list.append(int_num)
+#     return new_list
+  
+# def get_unique_pairs(int_list,pair_sum):
+#     stop_index = len(int_list)
+#     unique_pairs_set = set()
+#     for cur_index in range(stop_index):
+#         num_1 = int_list[cur_index]
+#         num_2 = pair_sum - num_1
+#         remaining_list = int_list[cur_index+1:]
+#         if num_2 in remaining_list:
+#             pair = (num_1,num_2)
+#             sorted_pair = tuple(sorted(pair))
+#             unique_pairs_set.add(sorted_pair)
+#     return unique_pairs_set
+  
+# str_num_list = input().split(",")
+# pair_sum = int(input())
+
+# int_list = convert_str_to_int(str_num_list)
+# unique_pairs = get_unique_pairs(int_list,pair_sum)
+
+# for pair in unique_pairs:
+#     print(pair) 
+ 
+
+
+                                           # ==================================
+# ========= K Times Rotate a list ============ Problem solving and debugging ======================
+                                           # ==================================
+
+# def convert_str_to_int(str_num_list):
+#     new_list = []
+#     for item in str_num_list:
+#         int_num = int(item)
+#         new_list.append(int_num)
+#     return new_list
+
+# str_num_list = input().split(",")
+# rotate_items = int(input())
+# int_list = convert_str_to_int(str_num_list)
+
+# rotate_items = rotate_items % len(int_list)
+
+# first_part = int_list[0:rotate_items]
+# second_part = int_list[rotate_items:]
+
+# second_part.extend(first_part)
+# print(second_part)
+
+
+# ==================== Identify the mistake ==========================
+
+list_a = [5,20,3,7,6,8]
+k = 2
+list_a.sort()
+list_len = len(list_a)
+res = list_a[list_len - k:]
+for i in range(k):
+    res[i] =  str(res[i])
+print(" ".join(res))
