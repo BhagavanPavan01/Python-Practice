@@ -1565,11 +1565,149 @@
 
 # ==================== Identify the mistake ==========================
 
-list_a = [5,20,3,7,6,8]
-k = 2
-list_a.sort()
-list_len = len(list_a)
-res = list_a[list_len - k:]
-for i in range(k):
-    res[i] =  str(res[i])
-print(" ".join(res))
+# list_a = [5,20,3,7,6,8]
+# k = 2
+# list_a.sort()
+# list_len = len(list_a)
+# res = list_a[list_len - k:]
+# for i in range(k):
+#     res[i] =  str(res[i])
+# print(" ".join(res))
+
+# ============================== Nested List =======================
+
+# list_a = [5,"SIX",[8,3,5,2,9],"zero",8,9.0]
+# print(list_a[2][0:])
+
+# ================== List inside another list ====
+
+# list_b = [3,4,"Pavan",[2,4,6,9,[4,5,6,7,8,9],0],"Gayathri"]
+# print(list_b[3][4][1])
+
+# ==================== Accessing String Characters in a list ===
+
+# list_c = ["Pavan" , "Gayathri"]
+# print(list_c[0][2])
+
+# ================================== String FOrmationg ==================
+
+# name = input()
+# age = int(input())
+# msg = "Hlo {}. You are {} years old."
+# print(msg.format(name,age))
+
+# =============== Pass numbers as parameters inide the string
+
+# name = input()
+# age = int(input())
+# msg = "Hlo {1}. You are {0} years old."
+# print(msg.format(age,name))
+
+# =============== Pass name as placeholder parameters inide the string
+
+# a = input()
+# b = int(input())
+# mag = "Hlo {name}. You are {age} years old."
+# print(mag.format(age = b,name = a))
+
+                        #   ======================
+# ========================== COde walk Thoough =====================
+# ========================== Character Frequency ===================
+                        #   ======================
+
+# def print_char_cout(line):
+#     line = line.lower()
+#     unique_chars = set(line)
+#     unique_chars.discard(" ")
+#     for char in sorted(unique_chars):
+#         msg = "{char}: {count}"
+#         print(msg.format(char=char, count = line.count(char)))
+    
+# line = input()
+# print_char_cout(line)
+
+
+# ========================= Identify The Mistake ====================
+
+# str_a = input()
+# str_b = input()
+# message = "{arg_1} is playing {arg_2}"
+# print(message.format(arg_1 = str_a, arg_2 = str_b))
+
+# ============================ Dictionary ============================
+# =========== Empty Dictionary
+
+# dict_a = dict()
+# print(type(dict_a))
+# print(dict_a)
+
+# =========== Accessing Items
+
+# dict_a = {'name' : 'pavan' , 'age' : 21 ,'Proffesion' : 'MCA'}
+# print(dict_a.get('name'))
+
+# print(dict_a['age'])
+
+# ============= Operations on Dictionary
+# =========== Adding new item
+# dict_a = {'name' : 'pavan' , 'age' : 21 ,'Proffesion' : 'MCA'}
+# dict_a['location'] = 'Srikakulam'
+# print(dict_a)
+
+# =========== Modifieng
+
+# dict_a = {'name' : 'pavan' , 'age' : 21 ,'Proffesion' : 'MCA'}
+# dict_a['Proffesion'] = 'Software Developer'
+# print(dict_a)
+
+# =========== Deleting
+
+# dict_a = {'name' : 'pavan' , 'age' : 21 ,'Proffesion' : 'MCA'}
+# del dict_a['age']
+# print(dict_a)
+
+# ============ Dictionary methods
+
+# dict_a = {'name' : 'pavan' , 'age' : 21 ,'Proffesion' : 'MCA'}
+# print(dict.keys(dict_a))
+# print(dict.values(dict_a))
+# print(dict.items(dict_a))
+# print(dict_a.keys())
+
+# =============== Iteration on keys , values , items
+
+# dict_a = {'name' : 'pavan' , 'age' : 21 ,'Proffesion' : 'MCA'}
+
+# for key in dict_a.keys():
+#     print(key)
+    
+# for value in dict_a.values():
+#     print(value)
+    
+# for item in dict_a.items():
+#     print(item)
+    
+# for key,value in dict_a.items():
+#     print("{}:{}".format(key,value))
+
+# =============== Converting keys as a list
+
+# dict_a = {'name' : 'pavan' , 'age' : 21 ,'Proffesion' : 'MCA'}
+# keys_list = list(dict_a.keys())
+# print(keys_list)
+
+# ================== Dictionary View (or)  Dynamic View
+
+# dict_a = {'name' : 'pavan' , 'age' : 21 ,'Proffesion' : 'MCA'}
+# view = dict_a.keys()
+# print(view)
+# dict_a['roll_no'] = 6
+# print(view)
+
+# ============== COnverting Sequence (lists,tuples,sets) to Dictionary
+
+list_a = [("name" , "pavan") , ["age" , 21] , {"roll" , 6} , ("1" , 5)]
+dict_a = dict(list_a)
+print(dict_a)
+
+
