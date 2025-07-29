@@ -1706,8 +1706,127 @@
 
 # ============== COnverting Sequence (lists,tuples,sets) to Dictionary
 
-list_a = [("name" , "pavan") , ["age" , 21] , {"roll" , 6} , ("1" , 5)]
-dict_a = dict(list_a)
-print(dict_a)
+# list_a = [("name" , "pavan") , ["age" , 21] , {"roll" , 6} , ("1" , 5)]
+# dict_a = dict(list_a)
+# print(dict_a)
+
+# ================== Referring same Dictionary object ==============
+
+# dict_a = {'name' : 'Pavan' , 'age' : 15}
+# dict_b = dict_a
+# dict_b['age'] = 20
+# print(dict_a)
+# print(dict_b)
+# print(id(dict_a)) 
+# print(id(dict_b))
+
+# ================= Dictionary Methods ============== 
+# ======== copy() method
+
+# dict_a = {'name' : 'Pavan', 'age' : 21, 'Roll' : 6 }
+# dict_a_copy = dict_a.copy()
+# print(dict_a_copy)
+# print(id(dict_a_copy))
+# print(id(dict_a))
+# print(len(dict_a_copy))
+# print('name' in dict_a)
+# # ========= clear()
+# dict_a.clear()
+# print(dict_a)
+
+# ================= Function Passing Multiple arguments =========
+
+# def more_args(*args) :
+#     print(args)
+
+# more_args(1,2,3)  
+# more_args(1, 2, 3, 4, 5)   # Somany argumnets
+# more_args()
+
+# =============== Unpacking Aa Arguments in the list 
+
+# def greet(arg1 = "Hi", arg2 = "Pavan"):
+#     print(arg1 + " " + arg2)
+    
+# data = ["Hello", "Keerthi"]
+# greet(*data)
+
+# ============== Unpacing as Arguments in Dicionary
+
+# def greet(arg1= "Hi", arg2 = "Ram"):
+#     print(arg1 + " " +arg2)
+    
+# data = {'arg1' :'Hello', 'arg2' :'Pavan'}
+# greet(**data)
+
+# ============== Multiple keyword arguments
+
+# def more_args(**kwargs):
+#     print(kwargs)
+    
+# more_args(a=1, b=2)
+# more_args()
+
+# ====================== Identify the mistake ==============================
+
+# def student_info(*args, **kwargs):
+#     print(args)
+#     print(kwargs)
+    
+# student_info('Math', 'Science', name ='Rahul', age= '15')
 
 
+# =========================== Problem Solving =============================
+
+# def convert_str_to_int_list(str_num_list):
+#     int_list = []
+#     for item in str_num_list:
+#         int_num = int(item)
+#         int_list.append(int_num)
+#     return int_list
+
+# def get_con_sum_list(int_list):
+#     con_sum_list = []
+#     for i in range(len(int_list)-1):
+#         con_sum = int_list[i] + int_list[i+1]
+#         con_sum_list.append(con_sum)
+#     return con_sum_list
+
+# def print_sum_triangle(int_list):
+#     while len(int_list) > 1 :
+#         con_sum_list =  get_con_sum_list(int_list)
+#         print(con_sum_list)
+#         int_list = con_sum_list
+#     return int_list
+
+# str_num_list = input().split(",")
+# int_list = convert_str_to_int_list(str_num_list)
+# print(int_list)
+# print_sum_triangle(int_list)
+
+
+# =========================== Grouping of Scores =================
+
+def get_color_score_pair_dict(ball_score_list):
+    color_scores_pair_dict = {}
+    for item in ball_score_list:
+        pair = item.split(":")
+        color,score = pair[0], int(pair[1])
+        if color in color_scores_pair_dict:
+            color_scores_pair_dict[color] = color_scores_pair_dict[color] + score
+        else :
+            color_scores_pair_dict[color] = score
+    return color_scores_pair_dict
+
+
+
+ball_score_list = input().split(",")
+color_scores_pair_dict = get_color_score_pair_dict(ball_score_list)
+print(color_scores_pair_dict)
+ 
+
+
+
+
+
+ 
