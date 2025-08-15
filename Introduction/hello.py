@@ -1751,7 +1751,7 @@
 # data = ["Hello", "Keerthi"]
 # greet(*data)
 
-# ============== Unpacing as Arguments in Dicionary
+# ============== Unpacing as Arguments in Dictionary
 
 # def greet(arg1= "Hi", arg2 = "Ram"):
 #     print(arg1 + " " +arg2)
@@ -1807,26 +1807,207 @@
 
 # =========================== Grouping of Scores =================
 
-def get_color_score_pair_dict(ball_score_list):
-    color_scores_pair_dict = {}
-    for item in ball_score_list:
-        pair = item.split(":")
-        color,score = pair[0], int(pair[1])
-        if color in color_scores_pair_dict:
-            color_scores_pair_dict[color] = color_scores_pair_dict[color] + score
-        else :
-            color_scores_pair_dict[color] = score
-    return color_scores_pair_dict
+# def get_color_score_pair_dict(ball_score_list):
+#     color_scores_pair_dict = {}
+#     for item in ball_score_list:
+#         pair = item.split(":")
+#         color,score = pair[0], int(pair[1])
+#         if color in color_scores_pair_dict:
+#             color_scores_pair_dict[color] = color_scores_pair_dict[color] + score
+#         else :
+#             color_scores_pair_dict[color] = score
+#     return color_scores_pair_dict
 
 
 
-ball_score_list = input().split(",")
-color_scores_pair_dict = get_color_score_pair_dict(ball_score_list)
-print(color_scores_pair_dict)
- 
+# ball_score_list = input().split(",")
+# color_scores_pair_dict = get_color_score_pair_dict(ball_score_list)
+# print(color_scores_pair_dict)
 
 
 
+# ========================== Pbject Oriented Programming In Pyhton =======================
+
+# ============== Define Class======= & Mobile object ===
+
+# class Mobile:
+#     def __init__(self, model,camera):
+#         self.model = model
+#         self.camera = camera
+#     def make_call(self,number):
+#         print("calling....{}".format(number))
+
+# Mobile_obj = Mobile("Galaxy M51", "64 MP")
+# print(Mobile_obj)
+# Mobile_obj.make_call(125487963)
+# print(type(Mobile_obj))
+
+# # ============ Multiple instances of the same class ===
+
+# Mobile_obj2 = Mobile("redmi","16 MP")
+# print(Mobile_obj2)
+# Mobile_obj2.make_call(879546231)
+# print(type(Mobile_obj2))
 
 
- 
+# ============ Accesing Attributes of an object ==================
+
+# class Mobile:
+#     def __init__ (self,model,storage):
+#         self.model = model 
+#         self.storage =  storage
+        
+# obj = Mobile("Samsung Galaxy M51","128GB")
+# print(obj.model)
+# print(obj.storage)
+
+# ================ Accesing other Method ================
+
+# class Mobile:
+#     def __init__ (self,model,processor):
+#         self.model = model
+#         self.processor = processor
+        
+#     def get_speed(self,speed):
+#         print("Processor Speed...... {}".format(speed))
+
+#     def get_processor(self):
+#         print(self.processor)
+        
+# obj1 = Mobile("Redmi NOte 10S","Snapdragon 8 Gen3.")
+# obj1.get_speed("720 Nits.")
+# print(obj1)
+# obj1.get_processor()
+
+# ================ Updating Attributes ========================
+
+# class Mobile:
+#     def __init__(self,model,camera):
+#         self.model = model
+#         self.camera =  camera
+#     def update_model(self,camera):
+#         self.camera = camera
+        
+# obj_1 = Mobile("redmi","128mp")
+# print(obj_1.model)
+# obj_1.update_model("64mp")
+# print(obj_1.camera)
+
+
+
+# =============== cart item list ===============================
+
+# class Cart:
+#     def __init__ (self):
+#         self.items = {}
+#         self.price_details = {'book' : 10 , 'laptop' : 50000}
+        
+#     def add_item(slef,item_name,quantity):
+#         slef.items[item_name.lower()] = quantity
+        
+#     def remove_item(self,item_name):
+#         del self.items[item_name]
+        
+#     def update_quantity(self,item_name,quantity):
+#         self.items[item_name] = quantity
+        
+#     def get_item(self):
+#         items_list = []
+#         items_list = list(self.items.keys())
+#         print(items_list)
+    
+#     def get_total_price(self):
+#         total_price = 0
+#         for item_name, quantity in self.items.items():
+#             total_price += self.price_details[item_name] * quantity 
+#         return total_price
+        
+# cart_obj = Cart()
+# cart_obj.add_item("Book", 10)
+# cart_obj.get_item()
+# cart_obj.add_item("laptop",1) 
+# cart_obj.get_item()
+# cart_obj.update_quantity("book",50)
+# cart_obj.get_item()
+# print(cart_obj.get_total_price())
+
+
+# ========================== Attributes and types ======================
+
+# class Cart :
+#     flat_discount = 0
+#     min_bill = 100
+#     def __init__(self):
+#         self.items = {}
+        
+#     def add_items(self,item_name,quantity):
+#         self.items[item_name] = quantity
+        
+#     def display_item(self):
+#         print(self.items)
+        
+#     def print_min_bill(self):
+#         print(Cart.min_bill)
+
+# # ======= Accessing instance attribute   
+# a = Cart()
+# a.add_items("Book" , 3)
+# print(a.items)          # Not recomended call
+# print(a.display_item())
+# a.display_item()        # recomended call
+# # print(Cart.items)       # its not working because class is not calling        
+
+# # ======= Accessing class attribute
+
+# print(Cart.min_bill)    # direct accessing class attribute
+# a.print_min_bill()      # access using methods as a instance method
+
+# # ========== Different instance to access class attributes or diff users 
+
+# b = Cart()
+# Cart.min_bill = 200
+# print(a.print_min_bill())
+# print(b.print_min_bill())
+
+
+
+# ============================== methods and its types ============================
+
+# # ============ instance methods
+# class Cart :
+#     def __init__(self):
+#         self.items = {}
+    
+#     def add_item(self,item_name,quantity):
+#         self.items[item_name] = quantity
+#         self.display_items()
+#     def display_items(self) :
+#         print(self.items)
+        
+# a = Cart()
+# a.add_item("book",3)
+
+# =============  Class methods 
+
+class Cart:
+    flat_discount = 0
+    min_bill = 100
+    @classmethod     # Decaretor
+    def update_flat_discount(cls,amount):
+        new_flat_discount = cls.flat_discount + amount
+        cls.flat_discount = new_flat_discount
+
+a = Cart()
+a.update_flat_discount(20)
+print(Cart.flat_discount)
+
+# ============== Static Method
+
+class Cart :
+    @staticmethod
+    def greet():
+        print("Have a Great Shopping")
+    
+Cart.greet()
+
+
