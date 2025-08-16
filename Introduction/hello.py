@@ -1935,19 +1935,19 @@
 # ========================== Attributes and types ======================
 
 # class Cart :
-#     flat_discount = 0
-#     min_bill = 100
+#     flat_discount = 0       ## Both class atributes
+#     min_bill = 100          ##
 #     def __init__(self):
 #         self.items = {}
         
-#     def add_items(self,item_name,quantity):
-#         self.items[item_name] = quantity
-        
-#     def display_item(self):
-#         print(self.items)
-        
-#     def print_min_bill(self):
-#         print(Cart.min_bill)
+#     def add_items(self,item_name,quantity):       ##
+#         self.items[item_name] = quantity          ##
+                                                    ##
+#     def display_item(self):                       ##  Inatance Attributes
+#         print(self.items)                         ##
+                                                    ##
+#     def print_min_bill(self):                     ##
+#         print(Cart.min_bill)                      ##
 
 # # ======= Accessing instance attribute   
 # a = Cart()
@@ -1989,25 +1989,185 @@
 
 # =============  Class methods 
 
-class Cart:
-    flat_discount = 0
-    min_bill = 100
-    @classmethod     # Decaretor
-    def update_flat_discount(cls,amount):
-        new_flat_discount = cls.flat_discount + amount
-        cls.flat_discount = new_flat_discount
+# class Cart:
+#     flat_discount = 0
+#     min_bill = 100
+#     @classmethod     # Decaretor
+#     def update_flat_discount(cls,amount):
+#         new_flat_discount = cls.flat_discount + amount
+#         cls.flat_discount = new_flat_discount
 
-a = Cart()
-a.update_flat_discount(20)
-print(Cart.flat_discount)
+# a = Cart()
+# a.update_flat_discount(20)
+# print(Cart.flat_discount)
 
-# ============== Static Method
+# # ============== Static Method
 
-class Cart :
-    @staticmethod
-    def greet():
-        print("Have a Great Shopping")
+# class Cart :
+#     @staticmethod       # Decaretor
+#     def greet():
+#         print("Have a Great Shopping")
     
-Cart.greet()
+# Cart.greet()
 
 
+# ========================= Inheritance =========================
+
+# class Product :
+#     def __init__(self ,name,price,deal_price,ratings):
+#         self.name = name
+#         self.price = price
+#         self.deal_price = deal_price
+#         self.ratings = ratings
+#         self.you_save = price - deal_price
+        
+#     def display_product_details(self) :
+#         print("Product : {}".format(self.name))
+#         print("Price: {}".format(self.price))
+#         print("Deal Price : {}".format(self.deal_price))
+#         print("You Saved: {}".format(self.you_save))
+#         print("Ratings: {}".format(self.ratings)) 
+        
+#     def get_deal_price(self):
+#         return self.deal_price  
+        
+# class ElectronicItem(Product):
+#     # def set_warranty(self,warranty_in_months):
+#     #     self.warranty_in_months = warranty_in_months
+        
+#     # def get_warranty(self):
+#     #     return f"Warranty : {self.warranty_in_months} Months"
+    
+#     def __init__(self,name,price,deal_price,ratings,warranty_in_months):
+#         super().__init__(name,price,deal_price,ratings)
+#         self.warranty_in_months = warranty_in_months
+        
+#     def display_product_details(self) :
+#         super().display_product_details()
+#         print("Warranty : {} months".format(self.warranty_in_months))
+            
+
+# class GroceryItem(Product):
+#     # def set_expiry_date(self,expiry_date):
+#     #     self.expiry_date = expiry_date
+        
+#     # def get_expiry_date(self):
+#     #     return self.expiry_date
+    
+#     def __init__(self,name,price,deal_price,ratings,expiry_date):
+#         super().__init__(name,price,deal_price,ratings)
+#         self.expiry_date = expiry_date
+    
+#     def display_product_details(self):
+#         super().display_product_details()
+#         print("Expiry Date: {}".format(self.expiry_date))
+          
+
+# class Order:
+#     def __init__(self,delivery_speed,delivery_address):
+#         self.items_in_cart = []
+#         self.delivery_speed = delivery_speed
+#         self.delivery_address = delivery_address
+        
+#     def add_item(self,product,quantity):
+#         self.items_in_cart.append((product,quantity))
+        
+#     def display_order_details(self):
+#         for product, quantity in self.items_in_cart:
+#             product.display_product_details()
+#             print("Quantity : {}".format(quantity))
+            
+#     def get_total_bill(self):
+#         total_bill = 0
+#         for product, quantity in self.items_in_cart:
+#             price = product.get_deal_price() * quantity
+#             total_bill += price
+#         print(f"Total Bill: {total_bill}")
+#         return total_bill
+
+
+# a = Product("Product",100,80,"5 Star")
+# a.display_product_details()   
+
+# print("================================== ")
+
+# camera = ElectronicItem("Canon Mark 4 5D-Camera",30000,25000,"4.5 Star","24 Months")
+# camera.display_product_details()
+
+# # print(e_item.get_warranty())
+
+# print("================================== ")
+
+# g_item = GroceryItem("Coconut Oil",110,90,"4 Star","December 2025")   
+# g_item.display_product_details()
+
+# print("================================== ")
+
+# tv = ElectronicItem("Samsung TV", 50000, 42000, "4.7 Star", "12 Months")
+# mobile = ElectronicItem("Redmi Note 10s", 18000, 16500, "4.8 Star", "12 Months")
+
+# milk = GroceryItem("Milk", 40, 25, "4 Star","October 2025")
+
+# # ============== another inheritance practice in order  --- continue question
+
+# my_order = Order("Primary Delivery", "Hyderabad")
+# my_order.add_item(tv,1)
+# my_order.add_item(mobile,1)
+# my_order.add_item(milk,10)
+# my_order.display_order_details()
+# print("================================== ")
+# my_order.get_total_bill()
+
+
+
+# ========================  Comppositions ============================
+
+class Engine:
+    def start(self):
+        print("Engine started")
+
+class Car:
+    def __init__(self):
+        self.engine = Engine()  # ✅ Composition: Car has an Engine
+
+    def drive(self):
+        self.engine.start()
+        print("Car is moving")
+
+my_car = Car()
+my_car.drive()
+
+
+# =================== Multileve Inheritance =======================
+# ============ Example 1
+# Base class (Grandparent)
+
+
+class Animal:
+    def speak(self):
+        print("Animals make sounds")
+
+# Derived class (Parent)
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks: Woof! Woof!")
+
+# Derived from Dog (Child)
+class Puppy(Dog):
+    def play(self):
+        print("Puppy loves to play")
+
+# ==============================
+puppy = Puppy()
+
+puppy.speak()   # Inherited from Animal
+puppy.bark()    # Inherited from Dog
+puppy.play()    # Defined in Puppy
+
+
+
+
+
+
+    
+        
