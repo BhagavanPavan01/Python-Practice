@@ -2122,52 +2122,322 @@
 
 # ========================  Comppositions ============================
 
-class Engine:
-    def start(self):
-        print("Engine started")
+# class Engine:
+#     def start(self):
+#         print("Engine started")
 
-class Car:
-    def __init__(self):
-        self.engine = Engine()  # ✅ Composition: Car has an Engine
+# class Car:
+#     def __init__(self):
+#         self.engine = Engine()  # ✅ Composition: Car has an Engine
 
-    def drive(self):
-        self.engine.start()
-        print("Car is moving")
+#     def drive(self):
+#         self.engine.start()
+#         print("Car is moving")
 
-my_car = Car()
-my_car.drive()
-
-
-# =================== Multileve Inheritance =======================
-# ============ Example 1
-# Base class (Grandparent)
+# my_car = Car()
+# my_car.drive()
 
 
-class Animal:
-    def speak(self):
-        print("Animals make sounds")
-
-# Derived class (Parent)
-class Dog(Animal):
-    def bark(self):
-        print("Dog barks: Woof! Woof!")
-
-# Derived from Dog (Child)
-class Puppy(Dog):
-    def play(self):
-        print("Puppy loves to play")
-
-# ==============================
-puppy = Puppy()
-
-puppy.speak()   # Inherited from Animal
-puppy.bark()    # Inherited from Dog
-puppy.play()    # Defined in Puppy
+# # =================== Multileve Inheritance =======================
+# # ============ Example 1
+# # Base class (Grandparent)
 
 
+# class Animal:
+#     def speak(self):
+#         print("Animals make sounds")
+
+# # Derived class (Parent)
+# class Dog(Animal):
+#     def bark(self):
+#         print("Dog barks: Woof! Woof!")
+
+# # Derived from Dog (Child)
+# class Puppy(Dog):
+#     def play(self):
+#         print("Puppy loves to play")
+
+# # ==============================
+# puppy = Puppy()
+
+# puppy.speak()   # Inherited from Animal
+# puppy.bark()    # Inherited from Dog
+# puppy.play()    # Defined in Puppy
 
 
 
+# =============================  Inheritance Example 2 ===================
 
-    
+# class Product:
+#     def __init__(self,name,price,deal_price,ratings):
+#         self.name = name
+#         self.price = price
+#         self.deal_price = deal_price
+#         self.ratings = ratings
+#         self.you_saved = price - deal_price
         
+#     def display_product_details(self):
+#         print("Product: {}".format(self.name))
+#         print("Price: {}".format(self.price))
+#         print("Deal Price: {}".format(self.deal_price))
+#         print("Ratings: {}".format(self.ratings))
+#         print("You Saved: {}".format(self.you_saved))
+        
+#     def get_deal_price(self):
+#         return self.deal_price
+        
+# ####### Testing Code ######## p = Product("tv",40000,25000,4)
+# ####### Testing Code ######### p.display_product_details()
+
+
+# class ElectronicItem(Product):
+#     def __init__ (self,name,price,deal_price,ratings,warranty_in_months):       ### Method overriding
+#         super().__init__(name,price,deal_price,ratings)
+#         self.warranty_in_moths = warranty_in_months
+        
+#     def display_product_details(self):
+#         super().display_product_details()
+#         print("Warranty : {} Months".format(self.warranty_in_moths))
+        
+        
+# ####### Testing Code ######## tv = ElectronicItem("Tv",30000,25000,4.5,24)
+# ####### Testing Code ######## tv.display_product_details()
+
+
+# class GroceryItem(Product):
+#     def __init__ (self,name,price,deal_price,ratings,expired_date):       ### Method overriding
+#         super().__init__(name,price,deal_price,ratings)
+#         self.expired_date = expired_date
+        
+#     def display_product_details(self):
+#         super().display_product_details()
+#         print("Expired Date : {}".format(self.expired_date))
+
+
+# ####### Testing Code ########   milk = GroceryItem("milk",40,30,4.5,"Dec 2025")
+# ####### Testing Code ########   milk.display_product_details()
+
+
+# class Laptop(ElectronicItem):
+#     def __init__(self,name,price,dela_price,ratings,warranty_in_months,ram,storage):
+#         super().__init__(name,price,dela_price,ratings,warranty_in_months)
+#         self.ram = ram
+#         self.storage = storage
+        
+#     def display_product_details(self):
+#         super().display_product_details()
+#         print("Ram: {}".format(self.ram))
+#         print("storage: {}".format(self.storage))
+        
+        
+# ####### Testing Code ########  HP_victus = Laptop("Hp Victus",70000,68000,4.5,36,"16 GB","1 TB SSD")
+# ####### Testing Code ########  HP_victus.display_product_details()
+        
+        
+    
+# class Order :
+#     deliery_charges = {
+#         "Normal" : 0,
+#         "Prime Delivery": 100
+#     }
+#     def __init__(self,delivery_method,delivery_address):
+#         self.items_in_cart = []
+#         self.delivery_address = delivery_address
+#         self.delivery_method = delivery_method 
+        
+#     def add_item(self,product,quantity):
+#         item = (product,quantity)
+#         self.items_in_cart.append(item)
+       
+#     def display_order_details(self):
+#         print("Delivery Method: {}".format(self.delivery_method))
+#         print("Delivery Address: {}".format(self.delivery_address))
+#         print("Products")
+#         print("==================================")
+#         for product,quantity in self.items_in_cart:
+#             product.display_product_details()
+#             print("Quantity: {}".format(quantity))
+#             print("")
+#         print("==================================")
+#         total_bill = self.get_total_bill()
+#         print("Total Bill: {}".format(total_bill))
+            
+#     def get_total_bill(self):
+#         total_bill = 0
+#         for product, quantity in self.items_in_cart:
+#             total_bill = total_bill + product.get_deal_price() * quantity
+            
+#         order_delievry_charges = Order.deliery_charges[self.delivery_method]
+#         total_bill = total_bill + order_delievry_charges
+#         return total_bill
+    
+#     @classmethod
+#     def update_delivery_charges(cls,delivery_method,charges):
+#         cls.deliery_charges[delivery_method] = charges
+        
+
+
+# tv = ElectronicItem("Tv",30000,25000,4.5,24)
+# milk = GroceryItem("milk",40,30,4.5,"Dec 2025")
+# dall = GroceryItem("Dall",40,30,4.5,"Dec 2025")
+# HP_victus = Laptop("Hp Victus",70000,68000,4.5,36,"16 GB","1 TB SSD")
+
+# my_order = Order("Normal","Hyderabad")
+# my_order.add_item(tv,1)
+# my_order.add_item(milk,10)
+# my_order.add_item(dall,10)
+# my_order.add_item(HP_victus,1)
+# my_order.display_order_details()
+# Order.update_delivery_charges("Normal",10)
+# my_order.display_order_details()
+
+
+# =================  Standard library  {{{{{{{{ MATH Module}}}}}}}}==========================
+
+# import math
+
+# print(math.factorial(5))
+# print(math.pi)
+
+# # =============== aliasing for package
+
+# import math as m1
+
+# print(m1.factorial(5))
+# print(m1.pi)
+
+# =============== single importing module
+
+# from math import factorial,pi
+
+# print(factorial(5))
+# print(pi)
+
+# #=============== aliasing single object
+
+# from math import factorial,pi as fact
+
+# print(factorial(5)) 
+# print(fact.pi)
+
+
+#================ {{{{{{Random Module}}}}}} 
+ # ==== randint()
+
+# import random
+
+# random_integer = random.randint(1,10)
+# print(random_integer)
+
+# ======== choice()
+
+# import random
+
+# choice_integer = random.choice(['k','g','r','some i know'])
+# print(choice_integer)
+
+# =========================== map()  ----> Built in function =============
+
+# def square(n):
+#     return n*n
+# numbers = [1,2,3,4,5,6]
+# result = map(square,numbers)
+# numbers_square = list(result)
+# print(numbers_square)
+
+
+# ========= converting string numbers to integers
+
+# line = input()
+# str_num = line.split()
+# map_obj = map(int,str_num)
+# numbers = list(map_obj)
+# print(numbers)
+
+# # ========= Simplifed Code
+
+# numbers = list(map(int,input().split()))
+# print(numbers)
+
+
+# =================== Filter Built in function
+
+# def is_positive_number(num):
+#     return num > 0
+
+# list_a = [1,-1,4,3,5,-5,-9,4,100,500,300]
+# positive_nums = sorted(filter(is_positive_number, list_a))
+# print(list(positive_nums))
+
+# ===================== Reduce Built in function
+
+# from functools import reduce
+
+# def sum_of_num(a,b):
+#     return a+b
+
+# list_a = [1,2,3,4,5]
+# sum_of_list = reduce(sum_of_num,list_a)
+# print(sum_of_list)
+
+
+# ==================== Global Variable
+
+# x = "Global Varialbe"        #----------> this is global variable declaration
+# print("{} form global".format(x))
+# print(f"{x} from global")
+
+# def foo():
+#     print(x)
+    
+# foo()
+
+
+
+# ================= Local Variable
+
+# x = "Global variable"
+
+# def foo():
+#     y = "Local variable"
+#     print(y)
+    
+# foo()
+# print(x)
+# print(y)    #-------------> it is not working becausr it is local variable
+
+# ================ Declare library or package in local variable
+
+# def foo():
+#     import math
+#     print(math.pi)
+    
+# foo()
+# # print(math.pi)     #-------------> it is not working becausr it is local variable
+
+# =============== Both local and global variable
+
+# x =  "Global variable"
+# def foo():
+#     x = "Local variable"
+#     print(x)
+# print(x)    
+# foo()
+# print(x)
+
+
+# ================ Global Keyword ----> it is to define a name to refer to the vlaue in global name space
+
+x = "Global Variable"
+
+def foo():
+    global x
+    x = "Global change"
+    print(x)
+    
+print(x) 
+foo()
+print(x)
+
+
+
