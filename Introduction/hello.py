@@ -2428,16 +2428,253 @@
 
 # ================ Global Keyword ----> it is to define a name to refer to the vlaue in global name space
 
-x = "Global Variable"
+# x = "Global Variable"
 
-def foo():
-    global x
-    x = "Global change"
-    print(x)
+# def foo():
+#     global x
+#     x = "Global change"
+#     print(x)
     
-print(x) 
-foo()
-print(x)
+# print(x) 
+# foo()
+# print(x)
+
+
+# ===================== Errors and Exception =================
+
+# ============== Syntax Error
+
+# x = "Bhagavan Pavan"
+
+# def s_error():
+#     print("This is error function.")
+    
+# print(x)
+# s_error(        #---------->  Raise the syntax error
+
+# ================ Exception Error
+
+# def divide (a,b):
+#     return a/b
+
+# x = divide(5,0)     #-------------> raise the exception error
+# print(x)
+
+# ========= Example 2
+
+# class Store :
+#     def __init__(self):
+#         self.items = {
+#             "milk" :20, "bread" :30,
+#         }
+        
+#     def add_item(self,name,quantity):
+#         self.items[name] += quantity
+#         print(self.items)
+        
+# s = Store()
+# print(s.add_item('milk', 20))
+
+
+# ==================== Examption handling using bank account example
+
+# class BankAccount :
+#     def __init__(self,account_number):
+#         self.account_number = str(account_number)
+#         self.balance = 0
+        
+#     def withdraw(self,amount):
+#         if self.balance >= amount:
+#             self.balance -= amount
+#         else:
+#             raise ValueError("Insufficient Funds")
+            
+#     def deposit(self,amount):
+#         self.balance += amount
+        
+#     def get_balance(self):
+#         return self.balance
+    
+# def transfer_amount(acc_1,acc_2,amount):
+#     try:
+#         acc_1.withdraw(amount)
+#         acc_2.deposit(amount)
+#         return True
+#     except:
+#         return False
+
+
+# user_1 = BankAccount("001")
+# user_2 = BankAccount("002")
+# user_1.deposit(25)
+# user_2.deposit(100)
+
+# print("User 1 Balance: {}/-".format(user_1.get_balance()))
+# print("User 2 Balance: {}/-".format(user_2.get_balance()))
+# print(transfer_amount(user_1,user_2,50))
+# print("Transferring 50/- from User 1 to User 2")
+# print("User 1 Balance: {}/-".format(user_1.get_balance()))
+# print("User 2 Balance: {}/-".format(user_2.get_balance()))
+
+# ================== Raising Exception 
+
+#           if any case the exception is uccor add run the code depends on the exception that time we use "raise" key word to except that content and exit the code
+# =================== Handling Exception
+
+#           Exceptions can be handled with try-except block
+#  Syntax 1
+
+#           try:
+                # write code that
+                # might cause exception
+#           except:
+                # the code to be run when
+                # there is an exception
+                
+#           we can also handle multiple exceptions
+#  Syntax 2
+
+#           try:
+                # write code that
+                # might cause exception
+#           except 1:
+                # the code to be run when
+                # there is an exception
+#           except 2:
+                # the code to be run when
+                # there is an exception
+
+                
+                
+# # ========================= Handling Specific Exception
+# try:
+#     a = int(input("Enter numerator: "))
+#     b = int(input("Enter denominator: "))
+#     c = a / b
+#     print(c)
+
+# except ZeroDivisionError:
+#     print("Denominator can't be 0")
+# except ValueError:
+#     print("Input should be an integer")
+# except:
+#     print("Something went wrong")
+
+
+
+# ======================= Date TIme modules or packages ============================
+
+
+# import datetime   # from datetime import date
+
+# date_time = datetime.date(2004,2,29)
+# print(date_time)
+
+
+# date_obj = datetime.date.today()
+# print(date_obj)
+
+# #==================== Date calss
+
+# from datetime import date
+
+# date_obj = date.today()
+# print(date_obj)
+# print(date_obj.year)
+# print(date_obj.month)
+# print(date_obj.day)
+
+# # ==================== Time class
+
+# from datetime import time
+
+# time_obj = time(11,15,59)
+# print(time_obj)
+# print(time_obj.hour)
+# print(time_obj.minute)
+# print(time_obj.second)
+
+# ====================== Date time class
+
+# from datetime import datetime
+
+# date_time_obj = datetime(2018, 11, 28, 15, 26)
+# print(date_time_obj)
+# print(date_time_obj.year)
+# print(date_time_obj.month)
+# print(date_time_obj.hour)
+# print(date_time_obj.minute)
+
+# import datetime
+
+# date_time_obj2 = datetime.datetime.now()
+# print(date_time_obj2)
+
+
+# # =================== Forematting Datetime
+
+# from datetime import datetime
+
+# now = datetime.now()
+# formatted_datetime_1 = now.strftime("%d %b %Y %I:%M:%S %p")
+# print(formatted_datetime_1)
+
+# formatted_datetime_2 = now.strftime("%d/%m/%Y, %H:%M:%S")
+# print(formatted_datetime_2)
+
+
+
+# # ================ Parsing Datetime ----> it is to sonver date in string to date
+
+# from datetime import datetime
+
+
+# date_string = "28 November, 2002"
+# print(date_string)
+
+# date_obj = datetime.strptime(date_string, "%d %B, %Y")
+# print(date_obj)
+
+# =============== Timedelta class
+
+# from datetime import timedelta
+
+# delta = timedelta(days=365, hours=4)
+# print(delta)
+
+# from datetime import timedelta, datetime
+# delta = timedelta(days=365)
+# current_datetime = datetime.now()
+# print(current_datetime)
+
+# next_year_datetime = current_datetime + delta
+# print(next_year_datetime)
+
+
+# ==================== Calculate time difference
+
+# import datetime
+
+# dt1 = datetime.datetime(2002,10,6)
+# dt2 = datetime.datetime.now()
+ 
+# duration = dt1 - dt2
+# print(duration)
+# print(type(duration))
+
+
+# ========== Days left in the year form a date
+
+from datetime import datetime
+
+date_string = input()
+date_obj = datetime.strptime(date_string,"%d/%m/%Y")
+
+year_end_datetime = datetime(year=date_obj.year, month24=12, day=31)
+
+duration = year_end_datetime - date_obj
+print(duration)
+
 
 
 
